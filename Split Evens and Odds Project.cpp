@@ -2,19 +2,47 @@
 //
 
 #include <iostream>
-
+#include "intLinkedList.h"
 int main()
 {
-    std::cout << "Hello World!\n";
+    intLinkedList originalList;
+    intLinkedList evensList;
+    intLinkedList oddsList;
+
+    int num;
+
+    cout << "Enter integers ending with -999: ";
+    cin >> num;
+
+    while (num != -999) {
+        originalList.insertLast(num);
+        cin >> num;
+    }
+
+    // Split the original list into evens and odds
+    originalList.splitEvensOddsList(evensList, oddsList);
+
+    // Print the original list using iterators
+    cout << "list: ";
+    for (linkedListIterator<int> iter = originalList.begin(); iter != originalList.end(); ++iter) {
+        cout << *iter << " ";
+    }
+    cout << endl;
+
+    // Print the evens list using iterators
+    cout << "evensList: ";
+    for (linkedListIterator<int> iter = evensList.begin(); iter != evensList.end(); ++iter) {
+        cout << *iter << " ";
+    }
+    cout << endl;
+
+    // Print the odds list using iterators
+    cout << "oddsList: ";
+    for (linkedListIterator<int> iter = oddsList.begin(); iter != oddsList.end(); ++iter) {
+        cout << *iter << " ";
+    }
+    cout << endl;
+
+    return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

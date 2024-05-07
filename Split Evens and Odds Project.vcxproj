@@ -129,6 +129,11 @@
   <ItemGroup>
     <ClCompile Include="Split Evens and Odds Project.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="intLinkedList.h" />
+    <ClInclude Include="linkedList.h" />
+    <ClInclude Include="unorderedLinkedList.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
